@@ -1,0 +1,68 @@
+$site-background: #fafafa;
+$font-site: 'Lato', sans-serif;
+$border: 1px solid gray;
+$color-dark: #3f7cac;
+$color-side: #95afba;
+$color-body: #bdc4a7;
+$color-acc1: #d5e1a3;
+$color-acc2: #e2f89c;
+
+body {
+	padding: 0; 
+	margin:0;
+	background: $site-background;
+	font-family: $font-site;
+	font-size: 20px;
+}
+
+header {
+	background: $color-side;
+} 
+
+footer {
+	justify-content: center;
+	align-items: center;
+	background: $color-dark;
+}
+
+.HolyGrail,
+.HolyGrail-body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.HolyGrail-nav {
+  order: -1;
+}
+
+@media (min-width: 768px) {
+  .HolyGrail-body {
+    flex-direction: row;
+     min-height: 90vh;
+    flex: 1;
+  }
+  .HolyGrail-content {
+    flex: 1;
+    background: $color-body;  
+    overflow: auto;
+    
+    .box {  	
+    	flex-wrap: wrap;
+  		min-height: -webkit-min-content;
+  		justify-content: space-around; 
+    }
+
+    div {
+    	flex-basis: auto;
+    	border: $border;
+    	width: 200px; 
+    	min-height: 150px;
+    }
+  }
+  .HolyGrail-nav {
+    /* 12em is the width of the columns */
+    flex: 0 0 12em;
+    background: $color-side;
+  }
+}
