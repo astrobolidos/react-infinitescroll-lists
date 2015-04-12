@@ -4,22 +4,27 @@
   "description": "tests for infinite scroll vertical and horizontal lists",
   "main": "js/app.js",
   "scripts": {
-    "start": "watchify js/app.js -o js/bundle.js -v -d .",  
+    "start": "watchify js/app.js -o js/bundle.js -v -d .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserify": {
     "transform": [
       "reactify",
-      ["sassify", { "auto-inject": true }]
+      [
+        "sassify",
+        {
+          "auto-inject": true
+        }
+      ]
     ]
-  },  
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/astrobolidos/react-infinitescroll-lists"
   },
   "keywords": [
     "react",
-    "flexbox", 
+    "flexbox",
     "infinite",
     "scroll"
   ],
@@ -31,7 +36,8 @@
   "homepage": "https://github.com/astrobolidos/react-infinitescroll-lists",
   "dependencies": {
     "flux": "^2.0.1",
-    "react": "^0.13.1"
+    "react": "^0.13.1",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "reactify": "^1.1.0",
