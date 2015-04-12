@@ -46,12 +46,14 @@ footer {
 		display: flex;
 		flex: 1;
 		background: $color-body;  
+		flex-flow: row wrap;
+		align-content: flex-start;
 
 		.box { 
 			list-style: none; 
 			display: flex;	
 			flex-flow: row wrap;
-			justify-content: space-around;
+			align-content: flex-start;
 			margin:0;
 			padding:0;
 
