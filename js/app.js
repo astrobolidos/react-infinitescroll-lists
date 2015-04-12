@@ -14,19 +14,40 @@ var SideBar = React.createClass({
 }); 
 
 var Content = React.createClass({
-	render:function() {
-		var items = []
-		for(i=0; i < 30; i++)
-			items.push({name:'Item' + i})
+	getInitialState: function() {
+		return { items: []}
+	},
+	componentDidMount: function() {
+		var list = this.state.items;
+		for(i=0; i < 4; i++)
+			list.push({name:'Item' + i});
 
+		this.setState({items: list});		
+	},
+	handleClick: function(e) {
+		console.log('click');
+		var list = this.state.items;
+		list.push({name:'Item' + list.length});
+
+		this.setState({items: list});		
+	},
+	handleItemClick: function(index, e) {
+		e.stopPropagation();
+		e.preventDefault();
+		var list = this.state.items;
+		list.splice(index, 1);
+		this.setState({items:list});
+	},
+	render:function() {
+		var component = this;
 		var createItems = function(item, i) {
-				return <div key={i}>Item {i}</div>
+				return <li key={i} onClick={component.handleItemClick.bind(component, i)}>{item.name}</li>
 		}
 
 		return <main className="HolyGrail-content">
-			
-				{items.map(createItems)}
-			
+			<ul className="box" onClick={this.handleClick}>
+				{this.state.items.map(createItems)}
+			</ul>
 		</main>
 	}
 });

@@ -27,42 +27,45 @@ footer {
 
 .HolyGrail,
 .HolyGrail-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 
 .HolyGrail-nav {
-  order: -1;
+	order: -1;
 }
 
 @media (min-width: 768px) {
-  .HolyGrail-body {
-    flex-direction: row;
-     min-height: 90vh;
-    flex: 1;
-  }
-  .HolyGrail-content {
-    flex: 1;
-    background: $color-body;  
-    overflow: auto;
-    
-    .box {  	
-    	flex-wrap: wrap;
-  		min-height: -webkit-min-content;
-  		justify-content: space-around; 
-    }
+	.HolyGrail-body {
+		flex-direction: row;
+		min-height: 90vh;
+		flex: 1;
+	}
+	.HolyGrail-content {
+		display: flex;
+		flex: 1;
+		background: $color-body;  
 
-    div {
-    	flex-basis: auto;
-    	border: $border;
-    	width: 200px; 
-    	min-height: 150px;
-    }
-  }
-  .HolyGrail-nav {
-    /* 12em is the width of the columns */
-    flex: 0 0 12em;
-    background: $color-side;
-  }
+		.box { 
+			list-style: none; 
+			display: flex;	
+			flex-flow: row wrap;
+			justify-content: space-around;
+			margin:0;
+			padding:0;
+
+			li {
+				margin: auto;
+				border: $border;
+				width: 200px; 
+				height: 150px;
+			}			
+		}
+	}
+	.HolyGrail-nav {
+		/* 12em is the width of the columns */
+		flex: 0 0 12em;
+		background: $color-side;
+	}
 }
